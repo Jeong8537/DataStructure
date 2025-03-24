@@ -1,5 +1,18 @@
-groups = ['HOT', 'Seventeen', 'BTS', 'BlackPink', 'NJZ']
-ratings = [1, 2, 3, 4, 5]
+def duplicate(city):
+    result = list()
+    s = set()
+    for city in cities:
+        l1 = len(s)
+        s.add(city)
+        l2 = len(s)
+        if l1 == l2:
+            result.append(city)
+    return result
 
-groups_ratings = (list(zip(groups, ratings)))
-print(groups_ratings)
+
+
+cities = ["Incheon", "Incheon", "Incheon", "Gimpo", "Seoul", "Seoul"]
+cities.append('Anyang')
+cities.append("Seoul")
+print(cities)
+print(set(duplicate(cities)))
