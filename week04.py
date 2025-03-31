@@ -28,6 +28,19 @@ class LinkedList:
                 current= current.link
         return f"\nNone Data"
 
+    def remove(self, target):
+        if self.head == target:
+            self.head.data = self.head.link
+            return
+        current = self.head
+        previous = None
+        while current:
+            if current.data == target:
+                previous.link = current.link
+                print(f"remove! target: {target}")
+            previous = current
+            current = current.link
+
     def __str__(self):
         node = self.head
         out_texts = ""
@@ -42,5 +55,10 @@ ll = LinkedList()
 
 for i in range(20):
     ll.append(random.randint(1, 30))
+
 print(ll)
 print(ll.search(10))
+
+ll.remove(10)
+print(ll)
+
