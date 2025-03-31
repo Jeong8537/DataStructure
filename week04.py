@@ -16,6 +16,15 @@ class LinkedList:
             current = current.link # next Node
         current.link = Node(data)
 
+    def search(self, target):
+        current = self.head
+        while current.link:
+            if current.data == target:
+                return f"find! target: {target}"
+            else:
+                current= current.link
+        return f"None Data"
+
     def __str__(self):
         node = self.head
         out_texts = ""
@@ -30,3 +39,5 @@ ll.append(8)
 ll.append(10)
 ll.append(-9)
 print(ll)
+print(ll.search(11))
+print(ll.search((10)))
