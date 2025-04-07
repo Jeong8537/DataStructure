@@ -1,32 +1,13 @@
-class Node:
-    def __init__(self, data):
-        self.data = data
-        self.link = None
+s1 = list()
+print(len(s1))
 
-class Stack:
-    def __init__(self):
-        self.top = None
+s1.append("Data Structure")
+s1.append("Data Base")
+print(len(s1)) # size
+print(s1[-1]) # peek
+print(s1)
 
-    def push(self, data):
-        node = Node(data)
-        if self.top is None:
-            self.top = node
-        else:
-            node.next = self.top
-            self.top = node
-
-    def pop(self):
-        if self.top is None:
-            # raise IndexError('pop from empty stack!')
-            return f"Stack is empty! Noting to delete | {self.top}"
-        popped_node = self.top
-        self.top = self.top.link
-        return popped_node.data
-
-
-s1 = Stack()
-print(s1.pop())
-
-s1.push("Data_struct")
 print(s1.pop())
 print(s1.pop())
+print(s1.pop()) # expection
+print(s1)
