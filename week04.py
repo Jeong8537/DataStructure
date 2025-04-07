@@ -29,14 +29,15 @@ class LinkedList:
         return f"\nNone Data"
 
     def remove(self, target):
-        if self.head == target:
-            self.head.data = self.head.link
+        if self.head.data == target:
+            self.head = self.head.link
             return
         current = self.head
         previous = None
         while current:
             if current.data == target:
                 previous.link = current.link
+                current.link = None
                 print(f"remove! target: {target}")
             previous = current
             current = current.link
@@ -59,10 +60,13 @@ ll = LinkedList()
 ll.append(8)
 ll.append(10)
 ll.append(-9)
+
 print(ll)
 print(ll.search(10))
 print(ll.search(8))
 print("\n")
+
 ll.remove(-9)
+
 print(ll)
 
