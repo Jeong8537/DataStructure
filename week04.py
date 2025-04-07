@@ -21,7 +21,7 @@ class LinkedList:
 
     def search(self, target):
         current = self.head
-        while current.link:
+        while current:
             if current.data == target:
                 return f"\nfind! target: {target}"
             else:
@@ -53,12 +53,16 @@ class LinkedList:
 
 ll = LinkedList()
 
-for i in range(20):
-    ll.append(random.randint(1, 30))
+# for i in range(20):
+#     ll.append(random.randint(1, 30))
 
+ll.append(8)
+ll.append(10)
+ll.append(-9)
 print(ll)
 print(ll.search(10))
-
-ll.remove(10)
+print(ll.search(8))
+print("\n")
+ll.remove(-9)
 print(ll)
 
