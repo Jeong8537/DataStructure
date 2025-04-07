@@ -40,6 +40,7 @@ class LinkedList:
                 previous.link = current.link
                 current.link = None
                 print(f"remove! target: {target}")
+                break
             previous = current
             current = current.link
 
@@ -67,6 +68,8 @@ print(ll.search(10))
 print(ll.search(8))
 print("\n")
 
+# ll.remove(8)
+# ll.remove(10)
 ll.remove(-9)
 
 print(ll)
