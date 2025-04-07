@@ -29,10 +29,11 @@ class LinkedList:
         return f"\nNone Data"
 
     def remove(self, target):
+        current = self.head
         if self.head.data == target:
             self.head = self.head.link
+            current.link = None
             return
-        current = self.head
         previous = None
         while current:
             if current.data == target:
