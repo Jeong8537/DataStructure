@@ -7,7 +7,7 @@ class TreeNode:
 def pre_order(node):
     if node is None:
         return
-    print(f"{node.data}", end="-")
+    print(f"{node.data}", end="->")
     post_order(node.left)
     post_order(node.right)
 
@@ -15,7 +15,7 @@ def in_order(node):
     if node is None:
         return
     in_order(node.left)
-    print(f"{node.data}", end="-")
+    print(f"{node.data}", end="->")
     in_order(node.right)
 
 def post_order(node):
@@ -23,7 +23,7 @@ def post_order(node):
         return
     post_order(node.left)
     post_order(node.right)
-    print(f"{node.data}", end="-")
+    print(f"{node.data}", end="->")
 
 
 node1 = TreeNode()
